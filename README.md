@@ -89,7 +89,7 @@ Sources for the demo client jar can be found in the projects directory.
 
 Supporting Articles
 -------------------
-coming soon...
+[How to take a Mortgage Finance Process into the Clouds](http://www.schabell.org/2016/04/howto-take-mortgage-finance-process-into-clouds.html)
 
 
 Released versions
