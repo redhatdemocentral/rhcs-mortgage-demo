@@ -1,8 +1,8 @@
 # Use jbossdemocentral/developer as the base
-FROM jbossdemocentral/developer:jdk8-uid
+FROM jbossdemocentral/developer
 
 # Maintainer details
-MAINTAINER Andrew Block <andy.block@gmail.com>
+MAINTAINER Andrew Block, Eric D. Schabell
 
 # Environment Variables 
 ENV BPMS_HOME /opt/jboss/bpms/jboss-eap-6.4
