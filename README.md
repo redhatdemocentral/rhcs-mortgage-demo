@@ -98,7 +98,8 @@ See the tagged releases for the following versions of the product:
 
 - v1.0 - JBoss BPM Suite 6.2.0-BZ-1299002, JBoss EAP 6.4.4 with mortgage process installed on Red Hat CDK using OpenShift Enterprise image.
 
-![Mortgage Process](https://raw.githubusercontent.com/redhatdemocentral/rhcs-mortgage-demo/master/docs/demo-images/mortgage-process.png)
+![Cloudy BPM Suite](https://raw.githubusercontent.com/redhatdemocentral/rhcs-mortgage-demo/master/docs/demo-images/rhcs-mortgage-demo.png)
 
-![BPM Suite](https://raw.githubusercontent.com/redhatdemocentral/rhcs-mortgage-demo/master/docs/demo-images/bpmsuite.png)
+![Mortgage OSE](https://raw.githubusercontent.com/redhatdemocentral/rhcs-mortgage-demo/master/docs/demo-images/rhcs-mortgage-pod.png)
+
 
