@@ -1,5 +1,5 @@
-App Dev Cloud with JBoss BPM Suite Mortgage Demo 
-================================================
+App Dev Cloud with JBoss BPM Mortgage Demo 
+==========================================
 This demo is to install JBoss BPM Suite Mortgage Demo in the Cloud based on leveraging the Red Hat 
 Container Development Kit (CDK) and the provided OpenShift Enterprise (OSE) image. 
 It delivers a fully functioning JBoss BPM Mortgage example containerized on OSE.
