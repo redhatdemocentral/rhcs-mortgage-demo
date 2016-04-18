@@ -24,38 +24,19 @@ Install on Red Hat CDK OpenShift Enterprise image
     [http://rhcs-mortgage-demo.10.1.2.2.xip.io/business-central](http://rhcs-mortgage-demo.10.1.2.2.xip.io/business-central)
     ( u:erics / p:bpmsuite1! )
 
-7. You can pre-load the JBoss BPM Suite Mortgage project with multiple pre-configured process instances, some will run through the
-rejected path, some will be waiting for you in the various human task when you login. To inject these pre-configured
-requests just run the client jar from a command line shell. You can run the following command from the 'support' directory:
-
-    ```
-     docker exec -it $(docker ps -lq) java -jar support/jboss-mortgage-demo-client.jar erics bpmsuite1!
-    ```
-
-
-Tip & Trick
------------
-This is a good way to look at what is being created during the installation:
-
-    ```
-    $ oc get all
-
-    NAME                        TYPE                                      FROM       LATEST
-    rhcs-mortgage-demo          Docker                                    Binary     1
-
-    NAME                        TYPE                                      FROM             STATUS     STARTED         DURATION
-    rhcs-mortgage-demo-1        Docker                                    Binary@56ed14a   Running    2 minutes ago   2m11s
-    
-    NAME                        DOCKER REPO                               TAGS                  UPDATED
-    developer                   redhatdemocentral/developer                1.0,jdk8-uid,latest   10 minutes ago
-    rhcs-mortgage-demo          172.30.211.34:5000/rhcs-mortgage-demo/rhcs-mortgage-demo                         
-
-    NAME                        READY                                     STATUS     RESTARTS   AGE
-    rhcs-mortgage-demo-1-build  1/1                                       Running    0          2m
-
 
 Notes
 -----
+Should your local network DNS not handle the resolution of the above address, giving you page not found errors, you can apply the
+following to your local hosts file:
+
+    ```
+    $ sudo vi /etc/hosts
+
+    # add host for CDK demo resolution.
+    10.1.2.2   rhcs-mortgage-demo.10.1.2.2.xip.io    rhcs-mortage-demo.10.1.2.2.xip.io
+    ```
+
 The following functionality is covered:
 
 - One advanced process.
