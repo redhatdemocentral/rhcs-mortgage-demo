@@ -1,0 +1,11 @@
+id: rhcs-mortgage
+title: Cloud JBoss BPM Suite Mortgage Demo
+github_repo_url: https://github.com/redhatdemocentral/rhcs-mortgage-demo
+technologies:
+  - Red Hat CDK
+  - JBoss BPM Suite
+  - OpenShift Enterprise  
+summary: Project to automate the installation of JBoss BPM Suite Mortgage deom using the Red Hat Container Development Kit (CDK) for application development activities on OpenShift.
+level: Beginner
+product: rhcs
+author: Babak Mozaffari, Andrew Block, Eric D. Schabell
