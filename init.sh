@@ -75,7 +75,7 @@ fi
 
 echo "OpenShift commandline tooling is installed..."
 echo 
-echo "Logging in to OSE as $OPENSHIFT_USER..."
+echo "Logging in to OpenShift as $OPENSHIFT_USER..."
 echo
 oc login 10.1.2.2:8443 --password=$OPENSHIFT_PWD --username=$OPENSHIFT_USER
 
