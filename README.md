@@ -87,4 +87,5 @@ See the tagged releases for the following versions of the product:
 
 ![Mortgage OSE](https://raw.githubusercontent.com/redhatdemocentral/rhcs-mortgage-demo/master/docs/demo-images/rhcs-mortgage-pod.png)
 
+![Cloud Suite](https://raw.githubusercontent.com/redhatdemocentral/rhcs-mortgage-demo/master/docs/demo-images/rhcs-arch.png)
 
