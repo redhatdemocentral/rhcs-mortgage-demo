@@ -6,11 +6,16 @@ set DEMO=Cloud JBoss BPM Mortgage Demo
 set AUTHORS=Babak Mozaffari, Andrew Block, Eric D. Schabell
 set PROJECT=git@github.com:redhatdemocentral/bpms-mortgage-demo.git
 set SRC_DIR=%PROJECT_HOME%installs
+set BPMS=jboss-bpmsuite-6.4.0.GA-deployable-eap7.x.zip
+set EAP=jboss-eap-7.0.0-installer.jar
+
+REM Adjust these variables to point to an OCP instance.
 set OPENSHIFT_USER=openshift-dev
 set OPENSHIFT_PWD=devel
-set BPMS=jboss-bpmsuite-6.3.0.GA-installer.jar
-set EAP=jboss-eap-6.4.0-installer.jar
-set EAP_PATCH=jboss-eap-6.4.7-patch.zip
+set HOST_IP=192.168.99.100
+set OCP_PRJ=appdev-in-cloud
+set OCP_APP=rhcs-mortgage-demo
+
 
 REM wipe screen.
 cls
@@ -41,6 +46,33 @@ echo ##                                                             ##
 echo #################################################################
 echo.
 
+REM Validate OpenShift
+set argTotal=0
+
+for %%i in (%*) do set /A argTotal+=1
+
+if %argTotal% EQU 1 (
+
+    call :validateIP %1 valid_ip
+
+	if !valid_ip! EQU 0 (
+	    echo OpenShift host given is a valid IP...
+	    set HOST_IP=%1
+		echo.
+		echo Proceeding with OpenShift host: !HOST_IP!...
+	) else (
+		echo Please provide a valid IP that points to an OpenShift installation...
+		echo.
+        GOTO :printDocs
+	)
+
+)
+
+if %argTotal% GTR 1 (
+    GOTO :printDocs
+)
+
+
 REM make some checks first before proceeding.	
 call where oc >nul 2>&1
 if  %ERRORLEVEL% NEQ 0 (
@@ -54,16 +86,6 @@ if exist %SRC_DIR%\%EAP% (
         echo.
 ) else (
         echo Need to download %EAP% package from the Customer Support Portal
-        echo and place it in the %SRC_DIR% directory to proceed...
-        echo.
-        GOTO :EOF
-)
-
-if exist %SRC_DIR%\%EAP_PATCH% (
-        echo Product patches are present...
-        echo.
-) else (
-        echo Need to download %EAP_PATCH% package from the Customer Support Portal
         echo and place it in the %SRC_DIR% directory to proceed...
         echo.
         GOTO :EOF
@@ -83,7 +105,7 @@ echo OpenShift commandline tooling is installed...
 echo.
 echo Logging in to OpenShift as %OPENSHIFT_USER%...
 echo.
-call oc login 10.1.2.2:8443 --password="%OPENSHIFT_PWD%" --username="%OPENSHIFT_USER%"
+call oc login %HOST_IP%:8443 --password="%OPENSHIFT_PWD%" --username="%OPENSHIFT_USER%"
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
@@ -93,9 +115,14 @@ if not "%ERRORLEVEL%" == "0" (
 )
 
 echo.
+echo Creating a new project...
+echo.
+call oc new-project %OCP_PRJ%
+
+echo.
 echo Setting up a new build...
 echo.
-call oc new-build "jbossdemocentral/developer" --name=rhcs-mortgage-demo --binary=true
+call oc new-build "jbossdemocentral/developer" --name=%OCP_APP% --binary=true
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
@@ -122,7 +149,7 @@ if not "%ERRORLEVEL%" == "0" (
 echo.
 echo Starting a build, this takes some time to upload all of the product sources for build...
 echo.
-call oc start-build rhcs-mortgage-demo --from-dir=. --follow=true --wait=true
+call oc start-build %OCP_APP% --from-dir=. --follow=true --wait=true
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
@@ -134,7 +161,7 @@ if not "%ERRORLEVEL%" == "0" (
 echo.
 echo Creating a new application...
 echo.
-call oc new-app rhcs-mortgage-demo
+call oc new-app %OCP_APP%
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
@@ -146,7 +173,7 @@ if not "%ERRORLEVEL%" == "0" (
 echo.
 echo Creating an externally facing route by exposing a service...
 echo.
-call oc expose service rhcs-mortgage-demo --hostname=rhcs-mortgage-demo.10.1.2.2.xip.io
+call oc expose service %OCP_APP% --hostname=%OCP_APP%.%HOST_IP%.xip.io
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
@@ -160,7 +187,7 @@ echo ====================================================================
 echo =                                                                  =
 echo =  Login to start exploring the Mortgage project:                  =
 echo =                                                                  =
-echo =  http://rhcs-mortgage-demo.10.1.2.2.xip.io/business-central      =
+echo =  http://%OCP_APP%.%HOST_IP%.xip.io/business-central      =
 echo =                                                                  =
 echo =  [ u:erics / p:jbossbpms1! ]                                     =
 echo =                                                                  =
