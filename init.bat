@@ -85,7 +85,7 @@ if exist %SRC_DIR%\%EAP% (
         echo Product sources are present...
         echo.
 ) else (
-        echo Need to download %EAP% package from the Customer Support Portal
+        echo Need to download %EAP% package from https://developers.redhat.com/products/eap/download
         echo and place it in the %SRC_DIR% directory to proceed...
         echo.
         GOTO :EOF
@@ -95,7 +95,7 @@ if exist %SRC_DIR%\%BPMS% (
         echo Product sources are present...
         echo.
 ) else (
-        echo Need to download %BPMS% package from the Customer Support Portal
+        echo Need to download %BPMS% package from https://developers.redhat.com/products/bpmsuite/download
         echo and place it in the %SRC_DIR% directory to proceed...
         echo.
         GOTO :EOF
@@ -105,7 +105,7 @@ echo OpenShift commandline tooling is installed...
 echo.
 echo Logging in to OpenShift as %OPENSHIFT_USER%...
 echo.
-call oc login %HOST_IP%:8443 --password="%OPENSHIFT_PWD%" --username="%OPENSHIFT_USER%"
+call oc login %HOST_IP%:8443 --password=%OPENSHIFT_PWD% --username=%OPENSHIFT_USER%
 
 if not "%ERRORLEVEL%" == "0" (
   echo.
@@ -122,6 +122,9 @@ call oc new-project %OCP_PRJ%
 echo.
 echo Setting up a new build...
 echo.
+call oc delete bc %OCP_APP% -n %OCP_PRJ% >nul 2>&1
+call oc delete imagestreams developer >nul 2>&1
+call oc delete imagestreams %OCP_APP% >nul 2>&1
 call oc new-build "jbossdemocentral/developer" --name=%OCP_APP% --binary=true
 
 if not "%ERRORLEVEL%" == "0" (

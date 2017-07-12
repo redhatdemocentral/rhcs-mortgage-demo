@@ -112,6 +112,8 @@ Released versions
 -----------------
 See the tagged releases for the following versions of the product:
 
+- v1.4 - JBoss BPM Suite 6.4.0 and JBoss EAP 7.0.0 with mortgage process installed on any given OpenShift installation and loading mulitple projects.
+
 - v1.3 - JBoss BPM Suite 6.4.0 and JBoss EAP 7.0.0 with mortgage process installed on OpenShift Container Platform.
 
 - v1.2 - JBoss BPM Suite 6.3.0 and JBoss EAP 6.4.4 with mortgage process installed on Red Hat CDK.
