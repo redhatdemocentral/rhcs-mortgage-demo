@@ -2,7 +2,7 @@
 setlocal
 
 set PROJECT_HOME=%~dp0
-set DEMO=Cloud JBoss BPM Mortgage Demo
+set DEMO=Cloud Mortgage Demo
 set AUTHORS=Babak Mozaffari, Andrew Block, Eric D. Schabell
 set PROJECT=git@github.com:redhatdemocentral/bpms-mortgage-demo.git
 set SRC_DIR=%PROJECT_HOME%installs

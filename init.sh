@@ -1,5 +1,5 @@
 #!/bin/sh 
-DEMO="Cloud JBoss Mortgage Demo"
+DEMO="Cloud Mortgage Demo"
 AUTHORS="Babak Mozaffari, Andrew Block, Eric D. Schabell"
 PROJECT="git@github.com:redhatdemocentral/rhcs-mortgage-demo.git"
 SRC_DIR=./installs
@@ -50,7 +50,7 @@ clear
 echo
 echo "#################################################################"
 echo "##                                                             ##"   
-echo "##  Setting up the ${DEMO}          ##"
+echo "##  Setting up the ${DEMO}                         ##"
 echo "##                                                             ##"   
 echo "##                                                             ##"   
 echo "##     ####  ####   #   #      ### #   # ##### ##### #####     ##"
@@ -66,9 +66,9 @@ echo "##        #   #     #     #   # #   # #   #                    ##"
 echo "##             #### #####  ###   ###  ####                     ##"
 echo "##                                                             ##"   
 echo "##  brought to you by,                                         ##"   
-echo "##             ${AUTHORS}                  ##"
+echo "##      ${AUTHORS}        ##"
 echo "##                                                             ##"   
-echo "##  ${PROJECT}     ##"
+echo "##  ${PROJECT}    ##"
 echo "##                                                             ##"   
 echo "#################################################################"
 echo
