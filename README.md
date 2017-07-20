@@ -105,6 +105,8 @@ Sources for the demo client jar can be found in the projects directory.
 
 Supporting Articles
 -------------------
+- [How to Optimize Existing IT by Modernizing Financial Processes](http://www.schabell.org/2017/07/how-to-optimize-existing-it-modernizing-financial-processes.html)
+
 - [How to Take New Improved Mortgage Finance Process in to the Clouds](http://www.schabell.org/2017/06/how-to-take-new-mortage-finance-process-into-clouds.html)
  
 - [How to take a Mortgage Finance Process into the Clouds](http://www.schabell.org/2016/04/howto-take-mortgage-finance-process-into-clouds.html)
