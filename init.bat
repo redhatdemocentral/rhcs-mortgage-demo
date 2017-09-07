@@ -192,7 +192,7 @@ echo =  Login to start exploring the Mortgage project:                  =
 echo =                                                                  =
 echo =  http://%OCP_APP%.%HOST_IP%.xip.io/business-central      =
 echo =                                                                  =
-echo =  [ u:erics / p:jbossbpms1! ]                                     =
+echo =  [ u:erics / p:bpmsuite1! ]                                     =
 echo =                                                                  =
 echo =  Note: it takes a few minutes to expose the service...           =
 echo =                                                                  =
