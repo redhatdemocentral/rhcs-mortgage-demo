@@ -10,6 +10,8 @@ Install JBoss Mortgage on OpenShift
 
   - [OCP Install Demo](https://github.com/redhatdemocentral/ocp-install-demo)
 
+  - [Red Hat Container Development Kit (CDK) using Minishift](https://developers.redhat.com/products/cdk/overview)
+
   - or your own OpenShift installation.
 
 2. [Download and unzip this demo.](https://github.com/redhatdemocentral/rhcs-mortgage-demo/archive/master.zip)
@@ -60,6 +62,8 @@ To clone a repository in the running container, the following actions would need
    $ git clone git://localhost:8001/Mortgages
    ```
 
+-----
+
 The following functionality is covered:
 
 - One advanced process.
@@ -87,7 +91,6 @@ The following functionality is covered:
 For 'Appraisal' task only, any claimed tasks that are not competed within a minute will be reassigned automatically back into the group for processing.
 
 Note that the entire demo is running default in memory, restart server, lose your process instances, data, monitoring history.
-
 Sources for the demo client jar can be found in the projects directory.
 
 
@@ -103,6 +106,8 @@ Supporting Articles
 Released versions
 -----------------
 See the tagged releases for the following versions of the product:
+
+- v1.6 - JBoss BPM Suite 6.4.0 and JBoss EAP 7.0.0 and available on CDK with Minishift.
 
 - v1.5 - JBoss BPM Suite 6.4.0 and JBoss EAP 7.0.0 with OpenShift genereated routes and service URLs.
 
