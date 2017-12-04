@@ -34,6 +34,19 @@ script):
 
 Notes
 -----
+
+Should your local network DNS not handle the resolution of the above address, giving you page not found errors, you can apply the
+following to your local hosts file:
+
+```
+$ sudo vi /etc/hosts
+
+# add host for OCP demo resulution
+192.168.99.100   rhcs-mortgage-demo-appdev-in-cloud.192.168.99.100.nip.io 
+```
+
+-----
+
 To clone a repository in the running container, the following actions would need to occur from a developer's machine.
 
 1. Execute port forwarding through the OpenShift CLI. This will open a tunnel between the developer's machine and the pod through
