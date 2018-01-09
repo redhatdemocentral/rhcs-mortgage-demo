@@ -6,7 +6,7 @@ OpenShift Container Platform (OCP).  It delivers a fully functioning JBoss BPM M
 
 Install FSI Mortgage on OpenShift
 -----------------------------------
-1. First ensure you have an OpenShift container based installation, such as one of the following installed first:
+1. (OPTIONAL) First ensure you have an OpenShift container based installation, such as one of the following installed first:
 
   - [OCP Install Demo](https://github.com/redhatdemocentral/ocp-install-demo)
 
